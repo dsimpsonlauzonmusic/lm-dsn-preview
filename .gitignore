@@ -1,0 +1,13 @@
+# Deploy allowlist: only the preview landing page and the two candidate
+# directions (plus shared data/assets) go to the public Pages repo.
+# Everything else in this folder — CLAUDE.md, brand book PDF, research
+# notes, archive — stays local.
+/*
+!/.gitignore
+!/index.html
+!/assets/
+!/directions/
+/directions/*
+!/directions/house-style/
+!/directions/inspiration/
+!/directions/shared/
