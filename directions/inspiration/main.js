@@ -4,7 +4,8 @@
 (function () {
   'use strict';
 
-  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches ||
+                     /[?&]static/.test(window.location.search);
   var hasGsap = typeof gsap !== 'undefined';
 
   if (hasGsap && typeof ScrollTrigger !== 'undefined') {

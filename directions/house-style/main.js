@@ -35,6 +35,60 @@
     return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   }
 
+  // Collection filter tray (styled UI, inert filtering)
+  var trays = document.querySelectorAll('.filter-tray');
+  document.querySelectorAll('.filter-chip[aria-controls]').forEach(function (chip) {
+    chip.addEventListener('click', function () {
+      var tray = document.getElementById(chip.getAttribute('aria-controls'));
+      if (!tray) return;
+      var isOpen = tray.classList.contains('is-open');
+      trays.forEach(function (t) { t.classList.remove('is-open'); });
+      document.querySelectorAll('.filter-chip[aria-controls]').forEach(function (c) {
+        c.setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        tray.classList.add('is-open');
+        chip.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+  document.querySelectorAll('.option-chip, .filter-chip--toggle').forEach(function (chip) {
+    chip.addEventListener('click', function () {
+      var pressed = chip.getAttribute('aria-pressed') === 'true';
+      chip.setAttribute('aria-pressed', pressed ? 'false' : 'true');
+    });
+  });
+
+  // Product gallery: thumbnail swap (crossfade via GSAP when available)
+  var mainImg = document.querySelector('.gallery-main img');
+  var thumbs = document.querySelectorAll('.thumb[data-full]');
+  if (mainImg && thumbs.length) {
+    thumbs.forEach(function (thumb) {
+      thumb.addEventListener('click', function () {
+        var full = thumb.getAttribute('data-full');
+        if (!full || full === mainImg.getAttribute('src')) return;
+        thumbs.forEach(function (t) { t.setAttribute('aria-pressed', 'false'); });
+        thumb.setAttribute('aria-pressed', 'true');
+        var alt = thumb.querySelector('img');
+        var swap = function () {
+          mainImg.setAttribute('src', full);
+          if (alt) mainImg.setAttribute('alt', alt.getAttribute('alt') || mainImg.getAttribute('alt'));
+        };
+        if (window.gsap && !reducedMotion()) {
+          window.gsap.to(mainImg, {
+            autoAlpha: 0.25, duration: 0.14, ease: 'power1.out',
+            onComplete: function () {
+              swap();
+              window.gsap.to(mainImg, { autoAlpha: 1, duration: 0.3, ease: 'power2.out' });
+            }
+          });
+        } else {
+          swap();
+        }
+      });
+    });
+  }
+
   // Podcast wave bars (deterministic heights, no Math.random)
   var wave = document.querySelector('.podcast-wave');
   if (wave && !wave.childElementCount) {

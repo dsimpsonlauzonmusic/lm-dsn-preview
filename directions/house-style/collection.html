@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Electric Guitars · Lauzon Music</title>
+<meta name="description" content="160 electric guitars on the wall at Lauzon Music, Ottawa. Fender Custom Shop, Gibson Custom, PRS, Tom Anderson, James Tyler and more. Set up by our tech, shipped insured worldwide.">
+<meta name="theme-color" content="#272F3A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://lauzonmusic.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@400;500;600&family=Poppins:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=20260805">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="announce" role="note">
+  <span>Free Canada-wide shipping on orders over $200 · US orders ship air, fully prepaid</span>
+</div>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="logo" href="index.html" aria-label="Lauzon Music, home">
+      <!-- SEAN-ASSET: final wordmark lockup at 2x; live-site logo hotlinked as the stand-in -->
+      <img class="logo-img" src="https://lauzonmusic.com/wp-content/uploads/2024/11/lauzon-music-logo.svg" alt="Lauzon Music"
+           onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'wordmark',innerHTML:'<span class=&quot;wm-lauzon&quot;>LAUZON</span><span class=&quot;wm-music&quot;>Music</span>'}))">
+    </a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="index.html#fresh">New Arrivals</a>
+      <a href="collection.html" aria-current="page">Guitars</a>
+      <a href="#">Amps &amp; Effects</a>
+      <a href="#">Used &amp; Consignment</a>
+      <a href="#">Repairs</a>
+      <a href="index.html#scene">The Scene</a>
+    </nav>
+    <div class="header-utils">
+      <a class="header-phone" href="tel:+16137251116">613-725-1116</a>
+      <button class="util-btn" type="button" aria-label="Search">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg>
+      </button>
+      <a class="util-btn" href="#" aria-label="Cart">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1.2 12H6.2L5 8Z"/><path d="M8.5 8V6.5a3.5 3.5 0 0 1 7 0V8"/></svg>
+      </a>
+      <button class="util-btn util-btn--menu menu-btn" type="button" aria-label="Menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap">
+    <!-- ============ COLLECTION HEADER ============ -->
+    <header class="collection-hero" data-hero>
+      <div class="collection-hero-copy">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a><span aria-hidden="true">/</span>
+          <a href="collection.html">Guitars</a><span aria-hidden="true">/</span>
+          <span aria-current="page">Electric</span>
+        </nav>
+        <p class="kicker">Lauzon Music · Est. 1945</p>
+        <h1>Electric Guitars</h1>
+        <p class="ed-note">If it hangs on our wall, it earned the spot. Every one ships set up and insured.</p>
+        <p class="collection-count">160 instruments</p>
+      </div>
+      <!-- SEAN-ASSET: real banner photography from the shop; product detail stand-in below -->
+      <div class="collection-hero-media" aria-hidden="true">
+        <img src="https://lauzonmusic.com/wp-content/uploads/2026/06/Gibson59LesPaulStandardRIVOSBourbonBurst7AQuilt-960113_5.jpg"
+             alt="" fetchpriority="high">
+      </div>
+    </header>
+  </div>
+
+  <!-- ============ FILTER / SORT BAR ============ -->
+  <div class="toolbar" data-hero>
+    <div class="wrap">
+      <div class="toolbar-inner">
+        <div class="filter-chips" role="group" aria-label="Filters">
+          <button class="filter-chip" type="button" aria-expanded="false" aria-controls="tray-brand">Brand <span class="caret" aria-hidden="true">&#9662;</span></button>
+          <button class="filter-chip" type="button" aria-expanded="false" aria-controls="tray-condition">New / Used <span class="caret" aria-hidden="true">&#9662;</span></button>
+          <button class="filter-chip" type="button" aria-expanded="false" aria-controls="tray-price">Price <span class="caret" aria-hidden="true">&#9662;</span></button>
+          <button class="filter-chip filter-chip--toggle" type="button" aria-pressed="false">Lefty</button>
+        </div>
+        <div class="sort-group">
+          <label for="sort">Sort</label>
+          <select id="sort">
+            <option>Featured</option>
+            <option>Newest</option>
+            <option>Price, low to high</option>
+            <option>Price, high to low</option>
+          </select>
+        </div>
+      </div>
+      <div class="filter-tray" id="tray-brand">
+        <div class="filter-tray-options">
+          <button class="option-chip" type="button" aria-pressed="false">Fender Custom Shop</button>
+          <button class="option-chip" type="button" aria-pressed="false">Fender</button>
+          <button class="option-chip" type="button" aria-pressed="false">Gibson Custom</button>
+          <button class="option-chip" type="button" aria-pressed="false">Gibson</button>
+          <button class="option-chip" type="button" aria-pressed="false">PRS</button>
+          <button class="option-chip" type="button" aria-pressed="false">Tom Anderson</button>
+          <button class="option-chip" type="button" aria-pressed="false">James Tyler</button>
+          <button class="option-chip" type="button" aria-pressed="false">Castedosa</button>
+          <button class="option-chip" type="button" aria-pressed="false">Collings</button>
+        </div>
+      </div>
+      <div class="filter-tray" id="tray-condition">
+        <div class="filter-tray-options">
+          <button class="option-chip" type="button" aria-pressed="false">New</button>
+          <button class="option-chip" type="button" aria-pressed="false">Used</button>
+          <button class="option-chip" type="button" aria-pressed="false">Consignment</button>
+        </div>
+      </div>
+      <div class="filter-tray" id="tray-price">
+        <div class="filter-tray-options">
+          <button class="option-chip" type="button" aria-pressed="false">Under $5,000</button>
+          <button class="option-chip" type="button" aria-pressed="false">$5,000 to $10,000</button>
+          <button class="option-chip" type="button" aria-pressed="false">$10,000 and up</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ PRODUCT GRID ============ -->
+  <section class="wrap">
+    <h2 class="sr-only">Instruments</h2>
+    <div class="grid-products">
+
+      <a class="card" href="product.html" data-reveal>
+        <div class="card-lift">
+          <div class="card-media">
+            <img src="https://lauzonmusic.com/wp-content/uploads/2023/07/FenderCustomShop51NocasterSuperHeavyRelicFadedAgedDesertSand-R131233_24.jpg"
+                 alt="Fender Custom Shop '51 Nocaster Super Heavy Relic in Faded Aged Desert Sand, full front view">
+          </div>
+          <div class="card-body">
+            <p class="card-brand">Fender Custom Shop</p>
+            <h3 class="card-title">'51 Nocaster Super Heavy Relic</h3>
+            <p class="card-finish">Faded Aged Desert Sand</p>
+            <div class="card-meta"><span class="chip">Custom Shop · 1 of 1</span><span class="serial">SN R131233</span></div>
+            <p class="card-price"><strong>$8,699</strong><span class="card-permo">or $242/mo with Affirm</span></p>
+          </div>
+        </div>
+      </a>
+
+      <a class="card" href="product.html" data-reveal>
+        <div class="card-lift">
+          <div class="card-media">
+            <img src="https://lauzonmusic.com/wp-content/uploads/2026/07/FenderAmericanUltraIITelecasterSinisterRed-US26006343_16.jpg"
+                 alt="Fender American Ultra II Telecaster in Sinister Red, full front view" loading="lazy">
+          </div>
+          <div class="card-body">
+            <p class="card-brand">Fender</p>
+            <h3 class="card-title">American Ultra II Telecaster</h3>
+            <p class="card-finish">Sinister Red</p>
+            <div class="card-meta"><span class="chip">New</span><span class="serial">SN US26006343</span></div>
+            <p class="card-price"><strong>$3,240</strong><span class="card-permo">or $90/mo with Affirm</span></p>
+          </div>
+        </div>
+      </a>
+
+      <a class="card card--hold" href="product.html" data-reveal>
+        <div class="card-lift">
+          <div class="card-media">
+            <span class="card-state card-state--hold">On Hold</span>
+            <img src="https://lauzonmusic.com/wp-content/uploads/2026/07/Gibson58LesPaulStandardRIVOSDirtyLemonFade-86529_20.jpg"
+                 alt="Gibson Custom '58 Les Paul Standard Reissue VOS in Dirty Lemon Fade, full front view" loading="lazy">
+          </div>
+          <div class="card-body">
+            <p class="card-brand">Gibson Custom</p>
+            <h3 class="card-title">'58 Les Paul Standard Reissue VOS</h3>
+            <p class="card-finish">Dirty Lemon Fade</p>
+            <div class="card-meta"><span class="chip">Custom Shop · VOS</span><span class="serial">SN 86529</span></div>
+            <p class="card-price"><strong>$9,799</strong><span class="card-permo">or $272/mo with Affirm</span></p>
+          </div>
+        </div>
+      </a>
+
+      <a class="card" href="product.html" data-reveal>
+        <div class="card-lift">
+          <div class="card-media">
+            <img src="https://lauzonmusic.com/wp-content/uploads/2026/07/JamesTylerStudioEliteHDTuckerberry_20.jpg"
+                 alt="James Tyler Studio Elite HD in Satin Black with Tuckerberry Shmear neck, full front view" loading="lazy">
+          </div>
+          <div class="card-body">
+            <p class="card-brand">James Tyler</p>
+            <h3 class="card-title">Studio Elite HD</h3>
+            <p class="card-finish">Satin Black, Tuckerberry Shmear neck</p>
+            <div class="card-meta"><span class="chip">Boutique build</span><span class="serial">SN 26342</span></div>
+            <p class="card-price"><strong>$11,799</strong><span class="card-permo">or $328/mo with Affirm</span></p>
+          </div>
+        </div>
+      </a>
+
+      <a class="card card--sold" href="product.html" data-reveal>
+        <div class="card-lift">
+          <div class="card-media">
+            <span class="card-state card-state--sold">Sold</span>
+            <img src="https://lauzonmusic.com/wp-content/uploads/2025/12/CastedosaConchersStandardAgedRedSparkle-550_27.jpg"
+                 alt="Castedosa Conchers Standard in Aged Red Sparkle, full front view" loading="lazy">
+          </div>
+          <div class="card-body">
+            <p class="card-brand">Castedosa</p>
+            <h3 class="card-title">Conchers Standard</h3>
+            <p class="card-finish">Aged Red Sparkle</p>
+            <div class="card-meta"><span class="chip">1 of 1</span><span class="serial">No. 550</span></div>
+            <p class="card-price"><strong>$14,999</strong><span class="card-permo">Sold. Want the next one? Get First Access.</span></p>
+          </div>
+        </div>
+      </a>
+
+      <a class="card" href="product.html" data-reveal>
+        <div class="card-lift">
+          <div class="card-media">
+            <img src="https://lauzonmusic.com/wp-content/uploads/2026/07/TomAndersonGuitarworksTClassicShortyTransButterscotchBlonde_06-06-26N_20.jpg"
+                 alt="Tom Anderson T Classic Shorty in Trans Butterscotch Blonde, full front view" loading="lazy">
+          </div>
+          <div class="card-body">
+            <p class="card-brand">Tom Anderson</p>
+            <h3 class="card-title">T Classic Shorty</h3>
+            <p class="card-finish">Trans Butterscotch Blonde</p>
+            <div class="card-meta"><span class="chip">New</span><span class="serial">SN 06-06-26N</span></div>
+            <p class="card-price"><strong>$6,499</strong><span class="card-permo">or $181/mo with Affirm</span></p>
+          </div>
+        </div>
+      </a>
+
+      <a class="card" href="product.html" data-reveal>
+        <div class="card-lift">
+          <div class="card-media">
+            <img src="https://lauzonmusic.com/wp-content/uploads/2026/07/TomAndersonGuitarworksLilAngelSatinNaturalPurpleBurst_05-24-26P_21.jpg"
+                 alt="Tom Anderson Li'l Angel in Satin Natural Purple Burst, full front view" loading="lazy">
+          </div>
+          <div class="card-body">
+            <p class="card-brand">Tom Anderson</p>
+            <h3 class="card-title">Li'l Angel</h3>
+            <p class="card-finish">Satin Natural Purple Burst</p>
+            <div class="card-meta"><span class="chip">New</span><span class="serial">SN 05-24-26P</span></div>
+            <p class="card-price"><strong>$9,799</strong><span class="card-permo">or $272/mo with Affirm</span></p>
+          </div>
+        </div>
+      </a>
+
+      <a class="card" href="product.html" data-reveal>
+        <div class="card-lift">
+          <div class="card-media">
+            <img src="https://lauzonmusic.com/wp-content/uploads/2026/06/FenderCustomShop56EsquireRelicAged55DesertTan-CZ591174_19.jpg"
+                 alt="Fender Custom Shop '56 Esquire Relic in Aged '55 Desert Tan, full front view" loading="lazy">
+          </div>
+          <div class="card-body">
+            <p class="card-brand">Fender Custom Shop</p>
+            <h3 class="card-title">'56 Esquire Relic</h3>
+            <p class="card-finish">Aged '55 Desert Tan</p>
+            <div class="card-meta"><span class="chip">Custom Shop · Relic</span><span class="serial">SN CZ591174</span></div>
+            <p class="card-price"><strong>$6,599</strong><span class="card-permo">or $183/mo with Affirm</span></p>
+          </div>
+        </div>
+      </a>
+
+      <a class="card" href="product.html" data-reveal>
+        <div class="card-lift">
+          <div class="card-media">
+            <img src="https://lauzonmusic.com/wp-content/uploads/2026/06/FenderCustomShop70sTeleCustomHeavyRelicAgedVintageWhite_17.jpg"
+                 alt="Fender Custom Shop '70s Tele Custom Heavy Relic in Aged Vintage White, full front view" loading="lazy">
+          </div>
+          <div class="card-body">
+            <p class="card-brand">Fender Custom Shop</p>
+            <h3 class="card-title">'70s Tele Custom Heavy Relic</h3>
+            <p class="card-finish">Aged Vintage White</p>
+            <div class="card-meta"><span class="chip">Custom Shop · Relic</span><span class="serial">SN R149206</span></div>
+            <p class="card-price"><strong>$7,499</strong><span class="card-permo">or $208/mo with Affirm</span></p>
+          </div>
+        </div>
+      </a>
+
+      <a class="card" href="product.html" data-reveal>
+        <div class="card-lift">
+          <div class="card-media">
+            <img src="https://lauzonmusic.com/wp-content/uploads/2026/06/PRSCustom240810TopDMOSprayersChoiceBlueBurstSparkle-0424063_23.jpg"
+                 alt="PRS Custom 24-08 10 Top in Sprayer's Choice Blue Burst Sparkle, full front view" loading="lazy">
+          </div>
+          <div class="card-body">
+            <p class="card-brand">PRS</p>
+            <h3 class="card-title">Custom 24-08 10 Top</h3>
+            <p class="card-finish">Sprayer's Choice Blue Burst Sparkle</p>
+            <div class="card-meta"><span class="chip">10 Top</span><span class="serial">SN 0424063</span></div>
+            <p class="card-price"><strong>$8,799</strong><span class="card-permo">or $244/mo with Affirm</span></p>
+          </div>
+        </div>
+      </a>
+
+      <a class="card" href="product.html" data-reveal>
+        <div class="card-lift">
+          <div class="card-media">
+            <img src="https://lauzonmusic.com/wp-content/uploads/2026/07/PRSCustom24SprayersChoiceEmeraldGreenSparkleBurst-0424123_21.jpg"
+                 alt="PRS Custom 24 in Sprayer's Choice Emerald Green Sparkle Burst, full front view" loading="lazy">
+          </div>
+          <div class="card-body">
+            <p class="card-brand">PRS</p>
+            <h3 class="card-title">Custom 24</h3>
+            <p class="card-finish">Emerald Green Sparkle Burst</p>
+            <div class="card-meta"><span class="chip">Sprayer's Choice</span><span class="serial">SN 0424123</span></div>
+            <p class="card-price"><strong>$6,570</strong><span class="card-permo">or $183/mo with Affirm</span></p>
+          </div>
+        </div>
+      </a>
+
+      <a class="card" href="product.html" data-reveal>
+        <div class="card-lift">
+          <div class="card-media">
+            <img src="https://lauzonmusic.com/wp-content/uploads/2026/06/GibsonES335SixtiesCherryUsed-214320330_19.jpg"
+                 alt="Gibson ES-335 in Sixties Cherry, full front view" loading="lazy">
+          </div>
+          <div class="card-body">
+            <p class="card-brand">Gibson</p>
+            <h3 class="card-title">ES-335</h3>
+            <p class="card-finish">Sixties Cherry</p>
+            <div class="card-meta"><span class="chip">Used</span><span class="serial">SN 214320330</span></div>
+            <p class="card-price"><strong>$3,899</strong><span class="card-permo">or $108/mo with Affirm</span></p>
+          </div>
+        </div>
+      </a>
+
+    </div>
+
+    <div class="load-more" data-reveal>
+      <p class="count">Showing 12 of 160</p>
+      <button class="btn btn-quiet" type="button">Load more</button>
+    </div>
+  </section>
+
+  <!-- ============ TRUST + SPECIALIST ============ -->
+  <div class="trustline trustline--pushed" data-reveal>
+    <div class="wrap trustline-inner">
+      <span class="trustline-item"><strong>Est. 1945</strong> · Three generations</span>
+      <span class="trustline-item"><strong>4.8&#9733;</strong> · 120 Google reviews</span>
+      <span class="trustline-item"><strong>Setup included</strong> on every instrument</span>
+      <span class="trustline-item"><strong>Ships worldwide</strong>, insured</span>
+    </div>
+  </div>
+
+  <section class="sect" aria-labelledby="spec-h">
+    <div class="wrap">
+      <div class="specialist-panel" data-reveal>
+        <div>
+          <h2 id="spec-h">Looking for something specific?</h2>
+          <p class="ed-note">The hunt is the fun part. Tell us the spec and we will chase it.</p>
+        </div>
+        <div class="specialist-contact">
+          <div>
+            <p class="row"><a href="tel:+16137251116">613-725-1116</a></p>
+            <p class="sub">Ask for the floor. A player answers.</p>
+          </div>
+          <div>
+            <p class="row"><a href="mailto:shop@lauzonmusic.com">shop@lauzonmusic.com</a></p>
+            <p class="sub">Photos and a straight answer, usually same day.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer site-footer--flush">
+  <div class="wrap footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <!-- SEAN-ASSET: reversed (white) wordmark lockup for dark ground -->
+        <span class="wordmark"><span class="wm-lauzon">LAUZON</span><span class="wm-music">Music</span></span>
+        <p>Rare, boutique and custom guitars. Est. 1945, Ottawa. Shipped worldwide.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="collection.html">Electric</a></li>
+          <li><a href="#">Acoustic</a></li>
+          <li><a href="#">Amps &amp; Effects</a></li>
+          <li><a href="#">Used &amp; Consignment</a></li>
+          <li><a href="index.html#fresh">New Arrivals</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#">Repairs &amp; Setups</a></li>
+          <li><a href="index.html#consign">Consignment</a></li>
+          <li><a href="index.html#consign">Custom Shop Orders</a></li>
+          <li><a href="#">Affirm Financing</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>The Scene</h4>
+        <ul>
+          <li><a href="index.html#scene">Beyond the Burst</a></li>
+          <li><a href="#">YouTube</a></li>
+          <li><a href="#">Instagram</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Visit</h4>
+        <address>
+          1355 Wellington St W<br>
+          Ottawa, Canada<br>
+          <a href="tel:+16137251116">613-725-1116</a><br>
+          Open six days a week
+        </address>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Lauzon Music · Est. 1945 · Ottawa, Canada</span>
+      <div class="pay-chips" aria-label="Payment methods">
+        <span>Visa</span><span>Mastercard</span><span>Amex</span><span>PayPal</span><span>Affirm</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+<script src="main.js?v=20260805"></script>
+</body>
+</html>
