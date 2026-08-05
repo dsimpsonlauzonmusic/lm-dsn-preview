@@ -76,13 +76,18 @@
   <div class="toolbar" data-hero>
     <div class="wrap">
       <div class="toolbar-inner">
-        <div class="filter-chips" role="group" aria-label="Filters">
-          <button class="filter-chip" type="button" aria-expanded="false" aria-controls="tray-brand">Brand <span class="caret" aria-hidden="true">&#9662;</span></button>
-          <button class="filter-chip" type="button" aria-expanded="false" aria-controls="tray-condition">New / Used <span class="caret" aria-hidden="true">&#9662;</span></button>
-          <button class="filter-chip" type="button" aria-expanded="false" aria-controls="tray-price">Price <span class="caret" aria-hidden="true">&#9662;</span></button>
-          <button class="filter-chip filter-chip--toggle" type="button" aria-pressed="false">Lefty</button>
-        </div>
+        <nav class="cat-pills" aria-label="Categories">
+          <a class="cat-pill" href="collection.html">All</a>
+          <a class="cat-pill is-active" href="collection.html" aria-current="page">Electric Guitars</a>
+          <a class="cat-pill" href="#">Acoustic Guitars</a>
+          <a class="cat-pill" href="#">Amps</a>
+          <a class="cat-pill" href="#">Effects</a>
+          <a class="cat-pill" href="#">Accessories</a>
+          <a class="cat-pill" href="#">Pro Audio</a>
+          <a class="cat-pill" href="#">Pianos</a>
+        </nav>
         <div class="sort-group">
+          <button class="filter-chip" type="button" aria-expanded="false" aria-controls="tray-facets">Filter <span class="caret" aria-hidden="true">&#9662;</span></button>
           <label for="sort">Sort</label>
           <select id="sort">
             <option>Featured</option>
@@ -92,31 +97,66 @@
           </select>
         </div>
       </div>
-      <div class="filter-tray" id="tray-brand">
-        <div class="filter-tray-options">
-          <button class="option-chip" type="button" aria-pressed="false">Fender Custom Shop</button>
-          <button class="option-chip" type="button" aria-pressed="false">Fender</button>
-          <button class="option-chip" type="button" aria-pressed="false">Gibson Custom</button>
-          <button class="option-chip" type="button" aria-pressed="false">Gibson</button>
-          <button class="option-chip" type="button" aria-pressed="false">PRS</button>
-          <button class="option-chip" type="button" aria-pressed="false">Tom Anderson</button>
-          <button class="option-chip" type="button" aria-pressed="false">James Tyler</button>
-          <button class="option-chip" type="button" aria-pressed="false">Castedosa</button>
-          <button class="option-chip" type="button" aria-pressed="false">Collings</button>
-        </div>
-      </div>
-      <div class="filter-tray" id="tray-condition">
-        <div class="filter-tray-options">
-          <button class="option-chip" type="button" aria-pressed="false">New</button>
-          <button class="option-chip" type="button" aria-pressed="false">Used</button>
-          <button class="option-chip" type="button" aria-pressed="false">Consignment</button>
-        </div>
-      </div>
-      <div class="filter-tray" id="tray-price">
-        <div class="filter-tray-options">
-          <button class="option-chip" type="button" aria-pressed="false">Under $5,000</button>
-          <button class="option-chip" type="button" aria-pressed="false">$5,000 to $10,000</button>
-          <button class="option-chip" type="button" aria-pressed="false">$10,000 and up</button>
+      <!-- Facet depth modelled on wildwoodguitars.com, calibrated down; every
+           facet implies a Shopify tag/metafield populated via Hyperspace -->
+      <div class="filter-tray" id="tray-facets">
+        <div class="facet-groups">
+          <div class="facet-group">
+            <h4>Brand</h4>
+            <div class="facet-opts">
+              <button class="facet-opt" type="button" aria-pressed="false">Fender Custom Shop <span class="fc">(38)</span></button>
+              <button class="facet-opt" type="button" aria-pressed="false">Fender <span class="fc">(21)</span></button>
+              <button class="facet-opt" type="button" aria-pressed="false">Gibson Custom <span class="fc">(27)</span></button>
+              <button class="facet-opt" type="button" aria-pressed="false">Gibson <span class="fc">(14)</span></button>
+              <button class="facet-opt" type="button" aria-pressed="false">PRS <span class="fc">(16)</span></button>
+              <button class="facet-opt" type="button" aria-pressed="false">Tom Anderson <span class="fc">(9)</span></button>
+              <button class="facet-opt" type="button" aria-pressed="false">James Tyler <span class="fc">(6)</span></button>
+              <button class="facet-opt" type="button" aria-pressed="false">Castedosa <span class="fc">(4)</span></button>
+              <button class="facet-opt" type="button" aria-pressed="false">Collings <span class="fc">(8)</span></button>
+              <button class="facet-opt" type="button" aria-pressed="false">Novo <span class="fc">(5)</span></button>
+            </div>
+          </div>
+          <div class="facet-group">
+            <h4>Condition</h4>
+            <div class="facet-opts">
+              <button class="facet-opt" type="button" aria-pressed="false">New <span class="fc">(112)</span></button>
+              <button class="facet-opt" type="button" aria-pressed="false">Used <span class="fc">(31)</span></button>
+              <button class="facet-opt" type="button" aria-pressed="false">Consignment <span class="fc">(17)</span></button>
+            </div>
+            <h4 style="margin-top:1.2rem">Body Style</h4>
+            <div class="facet-opts">
+              <button class="facet-opt" type="button" aria-pressed="false">Solid Body <span class="fc">(118)</span></button>
+              <button class="facet-opt" type="button" aria-pressed="false">Semi-Hollow <span class="fc">(28)</span></button>
+              <button class="facet-opt" type="button" aria-pressed="false">Hollow Body <span class="fc">(14)</span></button>
+            </div>
+          </div>
+          <div class="facet-group">
+            <h4>Price</h4>
+            <div class="facet-opts">
+              <button class="facet-opt" type="button" aria-pressed="false">Under $5,000 <span class="fc">(52)</span></button>
+              <button class="facet-opt" type="button" aria-pressed="false">$5,000 to $10,000 <span class="fc">(74)</span></button>
+              <button class="facet-opt" type="button" aria-pressed="false">$10,000 and up <span class="fc">(34)</span></button>
+            </div>
+            <h4 style="margin-top:1.2rem">Weight</h4>
+            <div class="facet-opts">
+              <button class="facet-opt" type="button" aria-pressed="false">Under 7 lb <span class="fc">(41)</span></button>
+              <button class="facet-opt" type="button" aria-pressed="false">7 to 8.5 lb <span class="fc">(83)</span></button>
+              <button class="facet-opt" type="button" aria-pressed="false">8.5 lb and up <span class="fc">(36)</span></button>
+            </div>
+          </div>
+          <div class="facet-group">
+            <h4>Neck Profile</h4>
+            <div class="facet-opts">
+              <button class="facet-opt" type="button" aria-pressed="false">Slim <span class="fc">(44)</span></button>
+              <button class="facet-opt" type="button" aria-pressed="false">Medium <span class="fc">(71)</span></button>
+              <button class="facet-opt" type="button" aria-pressed="false">Chunky "U" / "V" <span class="fc">(45)</span></button>
+            </div>
+            <h4 style="margin-top:1.2rem">Handedness</h4>
+            <div class="facet-opts">
+              <button class="facet-opt" type="button" aria-pressed="false">Right <span class="fc">(154)</span></button>
+              <button class="facet-opt" type="button" aria-pressed="false">Left <span class="fc">(6)</span></button>
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -932,7 +932,6 @@ h3 { font-size: var(--text-h3); line-height: 1.2; }
   .hero-grid { grid-template-columns: 1fr; }
   .hero-figure { order: -1; }
   .hero-media { aspect-ratio: 4 / 3; }
-  .hero-media img { object-fit: contain; }
   .trustline-inner { justify-content: flex-start; }
   .grid-products, .grid-products--4 { grid-template-columns: 1fr; }
   .sect-head { flex-direction: column; align-items: flex-start; gap: .9rem; }

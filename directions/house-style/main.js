@@ -52,7 +52,7 @@
       }
     });
   });
-  document.querySelectorAll('.option-chip, .filter-chip--toggle').forEach(function (chip) {
+  document.querySelectorAll('.option-chip, .filter-chip--toggle, .facet-opt').forEach(function (chip) {
     chip.addEventListener('click', function () {
       var pressed = chip.getAttribute('aria-pressed') === 'true';
       chip.setAttribute('aria-pressed', pressed ? 'false' : 'true');
@@ -87,6 +87,55 @@
         }
       });
     });
+  }
+
+  // Category highlights (OKA collection-highlights mechanic): hover/focus a
+  // category name to swap the flanking image sets; crossfade via GSAP when
+  // available, plain class toggle otherwise.
+  var cathi = document.querySelector('[data-cathi]');
+  if (cathi) {
+    var cathiLinks = cathi.querySelectorAll('[data-cathi-link]');
+    var setsFor = function (idx) {
+      return cathi.querySelectorAll('.cathi-set[data-set="' + idx + '"]');
+    };
+    var activeIdx = '0';
+    var activate = function (idx) {
+      if (idx === activeIdx) return;
+      var prev = activeIdx; activeIdx = idx;
+      cathiLinks.forEach(function (l) {
+        l.classList.toggle('is-active', l.getAttribute('data-cathi-link') === idx);
+      });
+      var showEls = setsFor(idx), hideEls = setsFor(prev);
+      // Class toggles are synchronous so a frozen/hidden tab can never strand
+      // two sets visible; GSAP only animates the incoming set.
+      hideEls.forEach(function (el) { el.classList.remove('is-active'); gsap && gsap.set(el, { clearProps: 'all' }); });
+      showEls.forEach(function (el) {
+        el.classList.add('is-active');
+        if (window.gsap && !reducedMotion()) {
+          gsap.fromTo(el, { autoAlpha: 0, y: 14 }, { autoAlpha: 1, y: 0, duration: 0.4, ease: 'power2.out', overwrite: true, clearProps: 'all' });
+        }
+      });
+    };
+    cathiLinks.forEach(function (link) {
+      var idx = link.getAttribute('data-cathi-link');
+      link.addEventListener('mouseenter', function () { activate(idx); });
+      link.addEventListener('focus', function () { activate(idx); });
+    });
+  }
+
+  // PDP sticky mini add-to-cart bar: visible once the buy box CTAs scroll
+  // above the viewport (plain scroll check; IO can stall in throttled tabs)
+  var minibar = document.querySelector('[data-minibar]');
+  var buyCtas = document.querySelector('.buybox-ctas');
+  if (minibar && buyCtas) {
+    var mbUpdate = function () {
+      var show = buyCtas.getBoundingClientRect().bottom < 0;
+      minibar.classList.toggle('is-visible', show);
+      minibar.setAttribute('aria-hidden', show ? 'false' : 'true');
+    };
+    window.addEventListener('scroll', mbUpdate, { passive: true });
+    window.addEventListener('resize', mbUpdate);
+    mbUpdate();
   }
 
   // Podcast wave bars (deterministic heights, no Math.random)
