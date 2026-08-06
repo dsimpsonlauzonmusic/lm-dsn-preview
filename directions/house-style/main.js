@@ -35,21 +35,14 @@
     return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   }
 
-  // Collection filter tray (styled UI, inert filtering)
-  var trays = document.querySelectorAll('.filter-tray');
+  // Collection filter sidebar: FILTER button slides the facet rail in beside
+  // the grid (inert filtering)
+  var collBody = document.querySelector('[data-collection-body]');
   document.querySelectorAll('.filter-chip[aria-controls]').forEach(function (chip) {
     chip.addEventListener('click', function () {
-      var tray = document.getElementById(chip.getAttribute('aria-controls'));
-      if (!tray) return;
-      var isOpen = tray.classList.contains('is-open');
-      trays.forEach(function (t) { t.classList.remove('is-open'); });
-      document.querySelectorAll('.filter-chip[aria-controls]').forEach(function (c) {
-        c.setAttribute('aria-expanded', 'false');
-      });
-      if (!isOpen) {
-        tray.classList.add('is-open');
-        chip.setAttribute('aria-expanded', 'true');
-      }
+      if (!collBody) return;
+      var open = collBody.classList.toggle('filters-open');
+      chip.setAttribute('aria-expanded', open ? 'true' : 'false');
     });
   });
   document.querySelectorAll('.option-chip, .filter-chip--toggle, .facet-opt').forEach(function (chip) {
@@ -66,9 +59,10 @@
     thumbs.forEach(function (thumb) {
       thumb.addEventListener('click', function () {
         var full = thumb.getAttribute('data-full');
-        if (!full || full === mainImg.getAttribute('src')) return;
+        if (!full) return;
         thumbs.forEach(function (t) { t.setAttribute('aria-pressed', 'false'); });
         thumb.setAttribute('aria-pressed', 'true');
+        if (full === mainImg.getAttribute('src')) return;
         var alt = thumb.querySelector('img');
         var swap = function () {
           mainImg.setAttribute('src', full);
@@ -121,6 +115,31 @@
       link.addEventListener('mouseenter', function () { activate(idx); });
       link.addEventListener('focus', function () { activate(idx); });
     });
+  }
+
+  // Carousel rails: arrows step one visible page, snap does the rest
+  document.querySelectorAll('[data-rail-prev], [data-rail-next]').forEach(function (btn) {
+    var id = btn.getAttribute('data-rail-prev') || btn.getAttribute('data-rail-next');
+    var rail = document.getElementById(id);
+    if (!rail) return;
+    var dir = btn.hasAttribute('data-rail-next') ? 1 : -1;
+    btn.addEventListener('click', function () {
+      rail.scrollBy({ left: dir * rail.clientWidth, behavior: reducedMotion() ? 'auto' : 'smooth' });
+    });
+  });
+
+  // PDP gallery arrows: cycle through the thumbnail set
+  var galPrev = document.querySelector('[data-gal-prev]');
+  var galNext = document.querySelector('[data-gal-next]');
+  if (galPrev && galNext) {
+    var galThumbs = Array.prototype.slice.call(document.querySelectorAll('.thumb[data-full]'));
+    var galStep = function (dir) {
+      var cur = galThumbs.findIndex(function (t) { return t.getAttribute('aria-pressed') === 'true'; });
+      var next = (cur + dir + galThumbs.length) % galThumbs.length;
+      galThumbs[next].click();
+    };
+    galPrev.addEventListener('click', function () { galStep(-1); });
+    galNext.addEventListener('click', function () { galStep(1); });
   }
 
   // PDP sticky mini add-to-cart bar: visible once the buy box CTAs scroll
@@ -231,17 +250,28 @@
         host.addEventListener('mouseleave', function () { tween.play(); });
         return tween;
       }
-      var brandsTrack = document.querySelector('.brands-track');
-      if (brandsTrack && !brandsTrack.dataset.cloned) {
-        brandsTrack.dataset.cloned = '1';
-        Array.prototype.slice.call(brandsTrack.children).forEach(function (el) {
-          var clone = el.cloneNode(true);
-          clone.setAttribute('aria-hidden', 'true');
-          brandsTrack.appendChild(clone);
+
+      loop('.ticker-track', 26);
+
+      // Podcast wave: bars breathe like live audio
+      var waveBars = gsap.utils.toArray('.podcast-wave span');
+      if (waveBars.length) {
+        waveBars.forEach(function (bar, i) {
+          gsap.to(bar, {
+            scaleY: 0.35 + ((i * 7) % 10) / 18,
+            duration: 0.5 + ((i * 3) % 7) / 10,
+            ease: 'sine.inOut',
+            yoyo: true,
+            repeat: -1,
+            delay: (i % 5) * 0.09
+          });
         });
       }
-      loop('.ticker-track', 26);
-      loop('.brands-track', 36);
+
+      // Sell/Build panels: cut-outs drift gently
+      gsap.utils.toArray('[data-float]').forEach(function (el, i) {
+        gsap.to(el, { y: -12, duration: 2.6 + i * 0.4, ease: 'sine.inOut', yoyo: true, repeat: -1 });
+      });
 
       // Heritage marquee: opposing continuous drift, matching the live site's
       // autoplay marquee (one row LTR / one RTL). Track content x3 in markup
@@ -303,6 +333,31 @@
       };
     }
   );
+
+  // Brands rail: chevrons step a page; dashes track scroll position
+  var brandsRail = document.querySelector('.brands-rail');
+  if (brandsRail) {
+    var bPrev = document.querySelector('.brands-arrow--prev');
+    var bNext = document.querySelector('.brands-arrow--next');
+    [bPrev, bNext].forEach(function (b) {
+      if (!b) return;
+      b.removeAttribute('aria-hidden'); b.removeAttribute('tabindex');
+      b.setAttribute('aria-label', b === bPrev ? 'Previous brands' : 'Next brands');
+    });
+    var step = function (dir) {
+      brandsRail.scrollBy({ left: dir * brandsRail.clientWidth * 0.8, behavior: reducedMotion() ? 'auto' : 'smooth' });
+    };
+    if (bPrev) bPrev.addEventListener('click', function () { step(-1); });
+    if (bNext) bNext.addEventListener('click', function () { step(1); });
+    var dashes = document.querySelectorAll('.brands-dashes span');
+    if (dashes.length) {
+      brandsRail.addEventListener('scroll', function () {
+        var max = brandsRail.scrollWidth - brandsRail.clientWidth;
+        var idx = max > 0 ? Math.round((brandsRail.scrollLeft / max) * (dashes.length - 1)) : 0;
+        dashes.forEach(function (d, i) { d.classList.toggle('is-active', i === idx); });
+      }, { passive: true });
+    }
+  }
 
   // Card hover: lift -6px, image scale 1.03 (pointer: fine only)
   if (window.matchMedia('(hover: hover) and (pointer: fine)').matches && !reducedMotion()) {

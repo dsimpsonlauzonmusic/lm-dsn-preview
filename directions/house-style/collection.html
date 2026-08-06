@@ -97,9 +97,15 @@
           </select>
         </div>
       </div>
-      <!-- Facet depth modelled on wildwoodguitars.com, calibrated down; every
-           facet implies a Shopify tag/metafield populated via Hyperspace -->
-      <div class="filter-tray" id="tray-facets">
+    </div>
+  </div>
+
+  <!-- ============ PRODUCT GRID + FILTER SIDEBAR ============ -->
+  <section class="wrap">
+    <h2 class="sr-only">Instruments</h2>
+    <div class="collection-body" data-collection-body>
+    <aside class="filter-side" id="tray-facets" aria-label="Filters">
+      <div class="filter-side-inner">
         <div class="facet-groups">
           <div class="facet-group">
             <h4>Brand</h4>
@@ -159,12 +165,8 @@
           </div>
         </div>
       </div>
-    </div>
-  </div>
-
-  <!-- ============ PRODUCT GRID ============ -->
-  <section class="wrap">
-    <h2 class="sr-only">Instruments</h2>
+    </aside>
+    <div>
     <div class="grid-products">
 
       <a class="card" href="product.html" data-reveal>
@@ -366,6 +368,8 @@
     <div class="load-more" data-reveal>
       <p class="count">Showing 12 of 160</p>
       <button class="btn btn-quiet" type="button">Load more</button>
+    </div>
+    </div>
     </div>
   </section>
 

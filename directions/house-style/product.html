@@ -61,8 +61,10 @@
     <div class="pdp">
       <div class="pdp-gallery" data-hero>
         <div class="gallery-main">
+          <button class="gal-arrow gal-arrow--prev" type="button" data-gal-prev aria-label="Previous photo"><svg viewBox="0 0 24 24"><path d="M14.5 6 9 12l5.5 6"/></svg></button>
           <img src="https://lauzonmusic.com/wp-content/uploads/2023/07/FenderCustomShop51NocasterSuperHeavyRelicFadedAgedDesertSand-R131233_24.jpg"
                alt="Fender Custom Shop '51 Nocaster Super Heavy Relic in Faded Aged Desert Sand, full front view" fetchpriority="high">
+          <button class="gal-arrow gal-arrow--next" type="button" data-gal-next aria-label="Next photo"><svg viewBox="0 0 24 24"><path d="M9.5 6 15 12l-5.5 6"/></svg></button>
         </div>
         <div class="gallery-thumbs">
           <button class="thumb" type="button" aria-pressed="true"
@@ -124,9 +126,18 @@
           <a class="btn btn-quiet btn-block" href="tel:+16137251116">Talk to a specialist · 613-725-1116</a>
         </div>
         <ul class="love-list">
-          <li><strong>Handwound Nocaster pickups.</strong> The blackguard sound everyone is chasing.</li>
-          <li><strong>Quarter-sawn roasted maple "U" neck.</strong> Fills the hand like a real '51.</li>
-          <li><strong>One build, one serial.</strong> When this one goes, that is it.</li>
+          <li>
+            <svg class="love-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h6"/></svg>
+            <div><strong>Handwound Nocaster pickups</strong>The blackguard sound everyone is chasing.</div>
+          </li>
+          <li>
+            <svg class="love-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20 14 10"/><path d="m12 4 8 8-3.5.5L13 16l-4-4 3.5-3.5L12 4Z"/></svg>
+            <div><strong>Quarter-sawn roasted maple "U" neck</strong>Fills the hand like a real '51.</div>
+          </li>
+          <li>
+            <svg class="love-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5v4.5l3 2"/></svg>
+            <div><strong>One build, one serial</strong>When this one goes, that is it.</div>
+          </li>
         </ul>
 
         <div class="buybox-ask">
@@ -139,36 +150,44 @@
           </div>
         </div>
 
-        <div class="pdp-acc">
-          <details>
-            <summary>The Lauzon Standard</summary>
-            <div class="acc-body">
-              <p>Final setup by our 25-year tech before it ships, set to your preference. Serial verified against the case candy and paperwork.</p>
-            </div>
-          </details>
-          <details>
-            <summary>Shipping &amp; Returns</summary>
-            <div class="acc-body">
-              <p>Ships insured from Ottawa. Free in Canada over $200. US orders ship air, fully prepaid, no brokerage surprises.</p>
-              <p>Straightforward returns. Exchanges welcome, ask us first.</p>
-            </div>
-          </details>
-          <details>
-            <summary>Financing</summary>
-            <div class="acc-body">
-              <p>Affirm financing in Canada and the US. Roughly $242/mo on this instrument; the exact terms show at checkout.</p>
-            </div>
-          </details>
-          <details>
-            <summary>Case &amp; Extras</summary>
-            <div class="acc-body">
-              <p>Hardshell case, Custom Shop certificate, and case candy included. Serial R131233.</p>
-            </div>
-          </details>
-        </div>
       </div>
     </div>
   </div>
+
+  <!-- ============ DETAILS BAND (full-width accordions) ============ -->
+  <section class="pdp-section pdp-section--flush" aria-label="Details">
+    <div class="wrap">
+      <div class="pdp-acc pdp-acc--band">
+        <details>
+          <summary>The Lauzon Standard</summary>
+          <div class="acc-body">
+            <p>Every instrument that leaves Wellington Street crosses our tech's bench first. Twenty-five years of setups: frets checked and dressed where needed, nut slots verified, intonation set, electronics tested, and the whole guitar played before it goes in the case.</p>
+            <p>Tell us how you play and it arrives ready: string gauge, action height, and pickup heights set to your preference at no charge. We confirm your spec by email before the case closes.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Shipping &amp; Returns</summary>
+          <div class="acc-body">
+            <p>Every instrument ships fully insured from Ottawa in professional packaging: loosened strings, supported headstock, climate-considered timing in deep winter and high summer. Free shipping in Canada on orders over $200.</p>
+            <p>US orders ship air, fully prepaid, with duties and brokerage handled before the box moves, so there are no surprises at the door. Straightforward returns: exchanges welcome, ask us first and we will make it easy.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Financing</summary>
+          <div class="acc-body">
+            <p>Affirm financing is available in both Canada and the US: roughly $242/mo on this instrument over 36 months, with the exact terms shown at checkout. RBC PayPlan is also available for Canadian buyers.</p>
+            <p>No games with the sticker: financing never changes the price of the guitar.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Case &amp; Extras</summary>
+          <div class="acc-body">
+            <p>This Nocaster ships in its Fender Custom Shop hardshell case with the certificate of authenticity, strap, and full case candy exactly as it arrived from Corona. Serial R131233 is photographed as it sits and verified against the paperwork before shipping.</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
 
   <!-- ============ PROVENANCE + SPECS ============ -->
   <section class="pdp-section" aria-labelledby="story-h">
@@ -183,31 +202,48 @@
         </div>
       </div>
       <div>
-        <h2 class="sr-only" id="specs-h">The Spec Sheet</h2>
-        <table class="spec-table" data-reveal>
-          <tbody>
-            <tr>
-              <th scope="row">Body</th>
-              <td>Ash, Faded Aged Desert Sand, Super Heavy Relic lacquer</td>
-            </tr>
-            <tr>
-              <th scope="row">Neck</th>
-              <td>Quarter-sawn roasted maple, Nocaster "U" profile, 9.5" radius, 1.650" nut, 6150 medium-jumbo frets</td>
-            </tr>
-            <tr>
-              <th scope="row">Electronics</th>
-              <td>Handwound '51 Nocaster pickups, nickel relic covers, neck and bridge</td>
-            </tr>
-            <tr>
-              <th scope="row">Hardware</th>
-              <td>Tele 51-54 bridge</td>
-            </tr>
-            <tr>
-              <th scope="row">Extras</th>
-              <td>Serial R131233, hardshell case, final setup by our tech</td>
-            </tr>
-          </tbody>
-        </table>
+        <p class="kicker" data-reveal>Specs</p>
+        <h2 id="specs-h" data-reveal style="font-size: clamp(2rem, 3vw, 2.6rem); margin-bottom: 1.25rem;">The Spec Sheet</h2>
+        <div class="spec-groups" data-reveal>
+          <div class="spec-group">
+            <h3>Body</h3>
+            <ul>
+              <li>Ash body</li>
+              <li>Faded Aged Desert Sand finish</li>
+              <li>Super Heavy Relic lacquer</li>
+            </ul>
+          </div>
+          <div class="spec-group">
+            <h3>Neck</h3>
+            <ul>
+              <li>Quarter-sawn roasted maple</li>
+              <li>Nocaster "U" profile</li>
+              <li>9.5" radius, 1.650" nut</li>
+              <li>6150 medium-jumbo frets</li>
+            </ul>
+          </div>
+          <div class="spec-group">
+            <h3>Electronics</h3>
+            <ul>
+              <li>Handwound '51 Nocaster pickups, neck and bridge</li>
+              <li>Nickel relic covers</li>
+            </ul>
+          </div>
+          <div class="spec-group">
+            <h3>Hardware</h3>
+            <ul>
+              <li>Tele 51-54 bridge</li>
+            </ul>
+          </div>
+          <div class="spec-group">
+            <h3>Extras</h3>
+            <ul>
+              <li>Serial R131233</li>
+              <li>Hardshell case and certificate</li>
+              <li>Final setup by our tech</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </section>
