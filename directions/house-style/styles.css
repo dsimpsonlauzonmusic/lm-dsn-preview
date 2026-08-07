@@ -957,7 +957,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   font-family: var(--font-ui); font-size: 0.8125rem; font-weight: 600;
   letter-spacing: 0.12em; text-transform: uppercase; color: var(--slate);
 }
-.sort-group select, .setup-field select {
+.sort-group select {
   font-family: var(--font-ui); font-size: 0.875rem; font-weight: 500; color: var(--ink);
   background-color: var(--white); border: 1.5px solid var(--mist); border-radius: var(--r-pill);
   padding: 0.55rem 1.1rem; cursor: pointer;
@@ -1062,6 +1062,21 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 }
 .gal-arrow:hover { background: var(--ink); color: var(--white); }
 .gal-arrow svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.gal-watch {
+  position: absolute; left: clamp(1.6rem, 3vw, 2.6rem); bottom: clamp(1.6rem, 3vw, 2.6rem); z-index: 2;
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  font-family: var(--font-ui); font-size: 0.875rem; font-weight: 500;
+  color: var(--white); background: rgba(39, 47, 58, 0.85); border: 0; cursor: pointer;
+  border-radius: var(--r-pill); padding: 0.65rem 1.3rem;
+  transition: background-color 0.2s var(--ease-out);
+}
+.gal-watch:hover { background: var(--ink); }
+.gal-watch-play {
+  width: 22px; height: 22px; border-radius: 50%; background: var(--red);
+  display: grid; place-items: center;
+}
+.gal-watch-play::after { content: ''; margin-left: 2px; border-style: solid; border-width: 4px 0 4px 7px; border-color: transparent transparent transparent var(--white); }
+
 .gal-arrow--prev { left: clamp(1.6rem, 3vw, 2.6rem); }
 .gal-arrow--next { right: clamp(1.6rem, 3vw, 2.6rem); }
 
@@ -1174,14 +1189,10 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   gap: clamp(1.5rem, 4vw, 3rem); align-items: center;
 }
 .setup-panel h2 { font-size: clamp(2.1rem, 3.6vw, 3.2rem); }
-.setup-form { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.9rem; }
-.setup-field { display: grid; gap: 0.4rem; }
-.setup-field label {
-  font-family: var(--font-ui); font-size: 0.72rem; font-weight: 600;
-  letter-spacing: 0.14em; text-transform: uppercase; color: var(--slate);
-}
-.setup-field select { width: 100%; }
-.setup-note { grid-column: 1 / -1; margin: 0.4rem 0 0; font-size: 0.8125rem; font-weight: 300; color: var(--slate-strong); }
+.setup-show { display: grid; gap: 1.1rem; }
+.setup-opts { display: flex; flex-wrap: wrap; gap: 0.55rem; }
+.setup-opts .chip { background: var(--white); border-color: transparent; padding: 0.55rem 1.1rem; font-size: 0.8125rem; }
+.setup-note { margin: 0; font-size: 0.8125rem; font-weight: 300; color: var(--slate-strong); max-width: 56ch; }
 
 /* ---------- Collection: category pills + filter tray v2 ---------- */
 
@@ -1303,7 +1314,6 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   .buybox { position: static; }
   .prov-grid { grid-template-columns: 1fr; }
   .setup-panel, .specialist-panel { grid-template-columns: 1fr; }
-  .setup-form { grid-template-columns: 1fr; }
   .collection-hero { grid-template-columns: 1fr; }
   .collection-hero-media { display: none; }
   .cathi-inner { grid-template-columns: 1fr; min-height: 0; }

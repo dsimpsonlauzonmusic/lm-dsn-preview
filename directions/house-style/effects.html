@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pedals &amp; Effects · Lauzon Music</title>
+<meta name="description" content="Pedals and effects at Lauzon Music, Ottawa. Strymon, Eventide, Universal Audio, Keeley, Boss and more. New releases land here first, shipped fast across Canada and the US.">
+<meta name="theme-color" content="#272F3A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://lauzonmusic.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@400;500;600&family=Poppins:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=20260805">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="announce" role="note">
+  <span>Free Canada-wide shipping on orders over $200 · US orders ship air, fully prepaid</span>
+</div>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="logo" href="index.html" aria-label="Lauzon Music, home">
+      <!-- SEAN-ASSET: final wordmark lockup at 2x; live-site logo hotlinked as the stand-in -->
+      <img class="logo-img" src="https://lauzonmusic.com/wp-content/uploads/2024/11/lauzon-music-logo.svg" alt="Lauzon Music"
+           onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'wordmark',innerHTML:'<span class=&quot;wm-lauzon&quot;>LAUZON</span><span class=&quot;wm-music&quot;>Music</span>'}))">
+    </a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="index.html#fresh">New Arrivals</a>
+      <a href="collection.html">Guitars</a>
+      <a href="effects.html" aria-current="page">Amps &amp; Effects</a>
+      <a href="#">Used &amp; Consignment</a>
+      <a href="#">Repairs</a>
+      <a href="index.html#scene">The Scene</a>
+    </nav>
+    <div class="header-utils">
+      <a class="header-phone" href="tel:+16137251116">613-725-1116</a>
+      <button class="util-btn" type="button" aria-label="Search">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg>
+      </button>
+      <a class="util-btn" href="#" aria-label="Cart">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1.2 12H6.2L5 8Z"/><path d="M8.5 8V6.5a3.5 3.5 0 0 1 7 0V8"/></svg>
+      </a>
+      <button class="util-btn util-btn--menu menu-btn" type="button" aria-label="Menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap">
+    <!-- ============ COLLECTION HEADER ============ -->
+    <header class="collection-hero" data-hero>
+      <div class="collection-hero-copy">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a><span aria-hidden="true">/</span>
+          <span aria-current="page">Pedals &amp; Effects</span>
+        </nav>
+        <p class="kicker">Lauzon Music · Est. 1945</p>
+        <h1>Pedals &amp; Effects</h1>
+        <p class="ed-note">The board is never finished. New releases land here first and ship fast, anywhere.</p>
+      </div>
+      <!-- SEAN-ASSET: real banner photography from the shop; product detail stand-in below -->
+      <div class="collection-hero-media" aria-hidden="true">
+        <img src="https://lauzonmusic.com/wp-content/uploads/2026/07/TimeLineMX_Press_TopDown_HQ-scaled.jpg"
+             alt="" fetchpriority="high">
+      </div>
+    </header>
+  </div>
+
+  <!-- ============ FILTER / SORT BAR ============ -->
+  <div class="toolbar" data-hero>
+    <div class="wrap">
+      <div class="toolbar-inner">
+        <nav class="cat-pills" aria-label="Categories">
+          <a class="cat-pill" href="collection.html">All</a>
+          <a class="cat-pill" href="collection.html">Electric Guitars</a>
+          <a class="cat-pill" href="#">Acoustic Guitars</a>
+          <a class="cat-pill" href="#">Amps</a>
+          <a class="cat-pill is-active" href="effects.html" aria-current="page">Effects</a>
+          <a class="cat-pill" href="#">Accessories</a>
+          <a class="cat-pill" href="#">Pro Audio</a>
+          <a class="cat-pill" href="#">Pianos</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ PRODUCT GRID + FILTER SIDEBAR ============ -->
+  <section class="wrap">
+    <h2 class="sr-only">Instruments</h2>
+    <div class="grid-tools" data-hero>
+      <button class="filter-chip" type="button" aria-expanded="false" aria-controls="tray-facets">Filter <span class="caret" aria-hidden="true">&#9662;</span></button>
+      <div class="sort-group">
+        <label for="sort">Sort</label>
+        <select id="sort">
+          <option>Featured</option>
+          <option>Newest</option>
+          <option>Price, low to high</option>
+          <option>Price, high to low</option>
+        </select>
+      </div>
+    </div>
+    <div class="collection-body" data-collection-body>
+    <aside class="filter-side" id="tray-facets" aria-label="Filters">
+      <div class="filter-side-inner">
+        <div class="facet-groups">
+          <div class="facet-group">
+            <h4>Brand</h4>
+            <div class="facet-opts">
+              <button class="facet-opt" type="button" aria-pressed="false">Strymon <span class="fc">(14)</span></button>
+              <button class="facet-opt" type="button" aria-pressed="false">Eventide <span class="fc">(9)</span></button>
+              <button class="facet-opt" type="button" aria-pressed="false">Universal Audio <span class="fc">(11)</span></button>
+              <button class="facet-opt" type="button" aria-pressed="false">Keeley <span class="fc">(5)</span></button>
+              <button class="facet-opt" type="button" aria-pressed="false">Boss <span class="fc">(7)</span></button>
+              <button class="facet-opt" type="button" aria-pressed="false">Neural DSP <span class="fc">(3)</span></button>
+              <button class="facet-opt" type="button" aria-pressed="false">JHS <span class="fc">(4)</span></button>
+              <button class="facet-opt" type="button" aria-pressed="false">Suhr <span class="fc">(3)</span></button>
+              <button class="facet-opt" type="button" aria-pressed="false">Electro-Harmonix <span class="fc">(4)</span></button>
+              <button class="facet-opt" type="button" aria-pressed="false">Lehle <span class="fc">(4)</span></button>
+            </div>
+          </div>
+          <div class="facet-group">
+            <h4>Type</h4>
+            <div class="facet-opts">
+              <button class="facet-opt" type="button" aria-pressed="false">Overdrive / Fuzz <span class="fc">(16)</span></button>
+              <button class="facet-opt" type="button" aria-pressed="false">Delay / Looper <span class="fc">(13)</span></button>
+              <button class="facet-opt" type="button" aria-pressed="false">Reverb <span class="fc">(9)</span></button>
+              <button class="facet-opt" type="button" aria-pressed="false">Modulation <span class="fc">(8)</span></button>
+              <button class="facet-opt" type="button" aria-pressed="false">Multi-Effects <span class="fc">(7)</span></button>
+              <button class="facet-opt" type="button" aria-pressed="false">Utility / Power <span class="fc">(12)</span></button>
+            </div>
+          </div>
+          <div class="facet-group">
+            <h4>Condition</h4>
+            <div class="facet-opts">
+              <button class="facet-opt" type="button" aria-pressed="false">New <span class="fc">(58)</span></button>
+              <button class="facet-opt" type="button" aria-pressed="false">Used <span class="fc">(7)</span></button>
+            </div>
+            <h4 style="margin-top:1.2rem">Price</h4>
+            <div class="facet-opts">
+              <button class="facet-opt" type="button" aria-pressed="false">Under $300 <span class="fc">(21)</span></button>
+              <button class="facet-opt" type="button" aria-pressed="false">$300 to $600 <span class="fc">(28)</span></button>
+              <button class="facet-opt" type="button" aria-pressed="false">$600 and up <span class="fc">(16)</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <div>
+    <div class="grid-products">
+
+      <a class="card" href="#" data-reveal>
+        <div class="card-lift">
+          <div class="card-media">
+            <img src="https://lauzonmusic.com/wp-content/uploads/2026/07/TimeLineMX_Press_TopDown_HQ-scaled.jpg" alt="Strymon TimeLine MX" loading="lazy">
+          </div>
+          <div class="card-body">
+            <p class="card-brand">Strymon</p>
+            <h3 class="card-title">TimeLine MX</h3>
+            <p class="card-finish">Next-generation delay workstation</p>
+            <div class="card-meta"><span class="chip">New release</span></div>
+            <p class="card-price"><strong>$975</strong><span class="card-permo">or $27/mo with Affirm</span></p>
+          </div>
+        </div>
+      </a>
+
+      <a class="card" href="#" data-reveal>
+        <div class="card-lift">
+          <div class="card-media">
+            <img src="https://lauzonmusic.com/wp-content/uploads/2024/04/MX.png" alt="Strymon BigSky MX" loading="lazy">
+          </div>
+          <div class="card-body">
+            <p class="card-brand">Strymon</p>
+            <h3 class="card-title">BigSky MX</h3>
+            <p class="card-finish">Next-generation reverb workstation</p>
+            <div class="card-meta"><span class="chip">New release</span></div>
+            <p class="card-price"><strong>$975</strong><span class="card-permo">or $27/mo with Affirm</span></p>
+          </div>
+        </div>
+      </a>
+
+      <a class="card" href="#" data-reveal>
+        <div class="card-lift">
+          <div class="card-media">
+            <img src="https://lauzonmusic.com/wp-content/uploads/2022/11/h90.png" alt="Eventide H90 Harmonizer" loading="lazy">
+          </div>
+          <div class="card-body">
+            <p class="card-brand">Eventide</p>
+            <h3 class="card-title">H90 Harmonizer</h3>
+            <p class="card-finish">Flagship multi-effects stompbox</p>
+            <div class="card-meta"><span class="chip">In stock</span></div>
+            <p class="card-price"><strong>$1,232</strong><span class="card-permo">or $34/mo with Affirm</span></p>
+          </div>
+        </div>
+      </a>
+
+      <a class="card" href="#" data-reveal>
+        <div class="card-lift">
+          <div class="card-media">
+            <img src="https://lauzonmusic.com/wp-content/uploads/2026/06/Untitled-March-28-2026-at-11.14.20-4.png" alt="Neural DSP Quad Cortex Mini" loading="lazy">
+          </div>
+          <div class="card-body">
+            <p class="card-brand">Neural DSP</p>
+            <h3 class="card-title">Quad Cortex Mini</h3>
+            <p class="card-finish">Compact floor modeler</p>
+            <div class="card-meta"><span class="chip">New release</span></div>
+            <p class="card-price"><strong>$2,000</strong><span class="card-permo">or $56/mo with Affirm</span></p>
+          </div>
+        </div>
+      </a>
+
+      <a class="card" href="#" data-reveal>
+        <div class="card-lift">
+          <div class="card-media">
+            <img src="https://lauzonmusic.com/wp-content/uploads/2025/01/ElCapistan_TopDown_Crop-1024x1024-1.jpg" alt="Strymon El Capistan V2" loading="lazy">
+          </div>
+          <div class="card-body">
+            <p class="card-brand">Strymon</p>
+            <h3 class="card-title">El Capistan V2</h3>
+            <p class="card-finish">dTape tape echo</p>
+            <div class="card-meta"><span class="chip">In stock</span></div>
+            <p class="card-price"><strong>$545</strong></p>
+          </div>
+        </div>
+      </a>
+
+      <a class="card" href="#" data-reveal>
+        <div class="card-lift">
+          <div class="card-media">
+            <img src="https://lauzonmusic.com/wp-content/uploads/2023/10/flint-min-1.png" alt="Strymon Flint V2" loading="lazy">
+          </div>
+          <div class="card-body">
+            <p class="card-brand">Strymon</p>
+            <h3 class="card-title">Flint V2</h3>
+            <p class="card-finish">Tremolo and reverb</p>
+            <div class="card-meta"><span class="chip">In stock</span></div>
+            <p class="card-price"><strong>$499</strong></p>
+          </div>
+        </div>
+      </a>
+
+      <a class="card" href="#" data-reveal>
+        <div class="card-lift">
+          <div class="card-media">
+            <img src="https://lauzonmusic.com/wp-content/uploads/2021/09/zelzah.png" alt="Strymon Zelzah" loading="lazy">
+          </div>
+          <div class="card-body">
+            <p class="card-brand">Strymon</p>
+            <h3 class="card-title">Zelzah</h3>
+            <p class="card-finish">Phaser and modulation</p>
+            <div class="card-meta"><span class="chip">In stock</span></div>
+            <p class="card-price"><strong>$499</strong></p>
+          </div>
+        </div>
+      </a>
+
+      <a class="card" href="#" data-reveal>
+        <div class="card-lift">
+          <div class="card-media">
+            <img src="https://lauzonmusic.com/wp-content/uploads/2023/04/gal-3-1024x1024.png" alt="Universal Audio Galaxy '74" loading="lazy">
+          </div>
+          <div class="card-body">
+            <p class="card-brand">Universal Audio</p>
+            <h3 class="card-title">Galaxy '74</h3>
+            <p class="card-finish">Tape echo and reverb</p>
+            <div class="card-meta"><span class="chip">In stock</span></div>
+            <p class="card-price"><strong>$499</strong></p>
+          </div>
+        </div>
+      </a>
+
+      <a class="card" href="#" data-reveal>
+        <div class="card-lift">
+          <div class="card-media">
+            <img src="https://lauzonmusic.com/wp-content/uploads/2019/05/EHXmemorymanMT1100_1.jpg" alt="Electro-Harmonix Deluxe Memory Man 1100-TT" loading="lazy">
+          </div>
+          <div class="card-body">
+            <p class="card-brand">Electro-Harmonix</p>
+            <h3 class="card-title">Deluxe Memory Man 1100-TT</h3>
+            <p class="card-finish">Analog delay with tap tempo</p>
+            <div class="card-meta"><span class="chip">In stock</span></div>
+            <p class="card-price"><strong>$510</strong></p>
+          </div>
+        </div>
+      </a>
+
+      <a class="card" href="#" data-reveal>
+        <div class="card-lift">
+          <div class="card-media">
+            <img src="https://lauzonmusic.com/wp-content/uploads/2026/06/Untitled-March-28-2026-at-11.14.20-3.png" alt="TWA Source Code Overdrive" loading="lazy">
+          </div>
+          <div class="card-body">
+            <p class="card-brand">TWA</p>
+            <h3 class="card-title">Source Code Overdrive</h3>
+            <p class="card-finish">Boutique overdrive</p>
+            <div class="card-meta"><span class="chip">New release</span></div>
+            <p class="card-price"><strong>$425</strong></p>
+          </div>
+        </div>
+      </a>
+
+      <a class="card" href="#" data-reveal>
+        <div class="card-lift">
+          <div class="card-media">
+            <img src="https://lauzonmusic.com/wp-content/uploads/2024/09/OCTA-PSI.png" alt="Keeley OCTA PSI" loading="lazy">
+          </div>
+          <div class="card-body">
+            <p class="card-brand">Keeley</p>
+            <h3 class="card-title">OCTA PSI</h3>
+            <p class="card-finish">Transfigurating fuzz</p>
+            <div class="card-meta"><span class="chip">In stock</span></div>
+            <p class="card-price"><strong>$379</strong></p>
+          </div>
+        </div>
+      </a>
+
+      <a class="card" href="#" data-reveal>
+        <div class="card-lift">
+          <div class="card-media">
+            <img src="https://lauzonmusic.com/wp-content/uploads/2026/06/Untitled-March-28-2026-at-11.14.20-1.png" alt="Boss VB-2w Waza Vibrato" loading="lazy">
+          </div>
+          <div class="card-body">
+            <p class="card-brand">Boss</p>
+            <h3 class="card-title">VB-2w Waza Vibrato</h3>
+            <p class="card-finish">Waza Craft reissue</p>
+            <div class="card-meta"><span class="chip">In stock</span></div>
+            <p class="card-price"><strong>$365</strong></p>
+          </div>
+        </div>
+      </a>
+
+    </div>
+
+    <div class="load-more" data-reveal>
+      <p class="count">Showing 12 of 65</p>
+      <button class="btn btn-quiet" type="button">Load more</button>
+    </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- ============ TRUST + SPECIALIST ============ -->
+  <div class="trustline trustline--pushed" data-reveal>
+    <div class="wrap trustline-inner">
+      <span class="trustline-item"><strong>Est. 1945</strong> · Three generations</span>
+      <span class="trustline-item"><strong>4.8&#9733;</strong> · 120 Google reviews</span>
+      <span class="trustline-item"><strong>Setup included</strong> on every instrument</span>
+      <span class="trustline-item"><strong>Ships worldwide</strong>, insured</span>
+    </div>
+  </div>
+
+  <section class="sect" aria-labelledby="spec-h">
+    <div class="wrap">
+      <div class="avail-panel" data-reveal>
+        <div>
+          <p class="kicker">Real people, real answers</p>
+          <h2 id="spec-h">Chasing a specific pedal?</h2>
+          <p class="ed-note">Chasing a specific pedal? We answer almost right away — someone who plays, not a ticket queue.</p>
+        </div>
+        <div>
+          <div class="avail-channels">
+            <a class="chan" href="mailto:shop@lauzonmusic.com"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Email</a>
+            <span class="chan chan--soon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="3" width="10" height="18" rx="2"/><path d="M11 18h2"/></svg>Text us<i>Coming</i></span>
+            <a class="chan" href="tel:+16137251116"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a12 12 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg>613-725-1116</a>
+          </div>
+          <p class="avail-note">Photos and a straight answer, usually same day.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer site-footer--flush">
+  <div class="wrap footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <!-- SEAN-ASSET: reversed (white) wordmark lockup for dark ground -->
+        <span class="wordmark"><span class="wm-lauzon">LAUZON</span><span class="wm-music">Music</span></span>
+        <p>Rare, boutique and custom guitars. Est. 1945, Ottawa. Shipped worldwide.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="collection.html">Electric</a></li>
+          <li><a href="#">Acoustic</a></li>
+          <li><a href="effects.html" aria-current="page">Amps &amp; Effects</a></li>
+          <li><a href="#">Used &amp; Consignment</a></li>
+          <li><a href="index.html#fresh">New Arrivals</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#">Repairs &amp; Setups</a></li>
+          <li><a href="index.html#consign">Consignment</a></li>
+          <li><a href="index.html#consign">Custom Shop Orders</a></li>
+          <li><a href="#">Affirm Financing</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>The Scene</h4>
+        <ul>
+          <li><a href="index.html#scene">Beyond the Burst</a></li>
+          <li><a href="#">YouTube</a></li>
+          <li><a href="#">Instagram</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Visit</h4>
+        <address>
+          1355 Wellington St W<br>
+          Ottawa, Canada<br>
+          <a href="tel:+16137251116">613-725-1116</a><br>
+          Open six days a week
+        </address>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Lauzon Music · Est. 1945 · Ottawa, Canada</span>
+      <div class="pay-chips" aria-label="Payment methods">
+        <span>Visa</span><span>Mastercard</span><span>Amex</span><span>PayPal</span><span>Affirm</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+<script src="main.js?v=20260805"></script>
+</body>
+</html>
