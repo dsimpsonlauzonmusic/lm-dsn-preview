@@ -24,7 +24,8 @@
       '<button class="pal-btn pal-btn--none" type="button" data-pal="" title="Lauzon only (no accent)" aria-label="No accent"></button>' +
       '<button class="pal-btn pal-btn--shellpink" type="button" data-pal="shellpink" title="Shell Pink" aria-label="Shell Pink accent"></button>' +
       '<button class="pal-btn pal-btn--surf" type="button" data-pal="surf" title="Surf Green" aria-label="Surf Green accent"></button>' +
-      '<button class="pal-btn pal-btn--duo" type="button" data-pal="duo" title="Shell Pink + Surf Green" aria-label="Shell Pink and Surf Green accents"></button>';
+      '<button class="pal-btn pal-btn--duo" type="button" data-pal="duo" title="Shell Pink + Surf Green" aria-label="Shell Pink and Surf Green accents"></button>' +
+      '<button class="pal-btn pal-btn--cream" type="button" data-pal="cream" title="Warm cream ground, accents on dark only" aria-label="Cream ground with stage accents"></button>';
     document.body.appendChild(host);
     var mark = function () {
       var cur = document.documentElement.getAttribute('data-accent') || '';

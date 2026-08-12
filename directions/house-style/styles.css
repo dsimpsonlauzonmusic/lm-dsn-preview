@@ -46,21 +46,38 @@ html[data-accent="shellpink"] { --accent: #F391A0; --accent-strong: #B24B5F; --a
 html[data-accent="surf"]      { --accent: #9AD5CA; --accent-strong: #2F6E63; --accent-soft: rgba(154, 213, 202, 0.50); --accent-2: #9AD5CA; --accent-2-strong: #2F6E63; --accent-2-soft: rgba(154, 213, 202, 0.50); }
 html[data-accent="duo"]       { --accent: #F391A0; --accent-strong: #B24B5F; --accent-soft: rgba(243, 145, 160, 0.45); --accent-2: #9AD5CA; --accent-2-strong: #2F6E63; --accent-2-soft: rgba(154, 213, 202, 0.50); }
 
+/* "Stage" variant: warm cream-paper light ground (no chromatic competition
+   with red); Shell Pink + Surf Green appear ONLY on ink/dark sections */
+html[data-accent="cream"] {
+  --accent: #F391A0; --accent-2: #9AD5CA;
+  --panel: #FBF8E9; --panel-soft: #FCFAF0;
+  --line: rgba(39, 47, 58, 0.16);
+}
+html[data-accent="cream"] .kicker { color: var(--slate); }
+html[data-accent="cream"] .ticker-track span::after { color: var(--red); }
+html[data-accent="cream"] .podcast-title em { color: #F391A0; }
+html[data-accent="cream"] .podcast-wave span { background: #F391A0; }
+html[data-accent="cream"] .podcast-wave span:nth-child(even) { background: #9AD5CA; }
+html[data-accent="cream"] .pod-latest { border-color: rgba(154, 213, 202, 0.35); }
+html[data-accent="cream"] .pod-latest-num { color: #9AD5CA; }
+html[data-accent="cream"] .site-footer .footer-col h4 { color: #9AD5CA; }
+html[data-accent="cream"] .site-footer .wm-music { color: #F391A0; }
+
 /* --- TEST-PROMINENCE placements (exploration only; final roles decided later) --- */
-html[data-accent] .announce { background: var(--accent); color: var(--ink); }
-html[data-accent] .players-panel,
-html[data-accent] .signup-panel,
-html[data-accent] .collection-hero { background: color-mix(in srgb, var(--accent) 22%, var(--white)); }
-html[data-accent] .avail-panel { background: color-mix(in srgb, var(--accent-2) 22%, var(--white)); }
-html[data-accent] .duo2-panel { background: color-mix(in srgb, var(--accent) 20%, var(--white)); }
-html[data-accent] .duo2-panel:nth-child(2) { background: color-mix(in srgb, var(--accent-2) 20%, var(--white)); }
+html[data-accent="shellpink"] .announce, html[data-accent="surf"] .announce, html[data-accent="duo"] .announce { background: var(--accent); color: var(--ink); }
+html[data-accent="shellpink"] .players-panel, html[data-accent="surf"] .players-panel, html[data-accent="duo"] .players-panel,
+html[data-accent="shellpink"] .signup-panel, html[data-accent="surf"] .signup-panel, html[data-accent="duo"] .signup-panel,
+html[data-accent="shellpink"] .collection-hero, html[data-accent="surf"] .collection-hero, html[data-accent="duo"] .collection-hero { background: color-mix(in srgb, var(--accent) 22%, var(--white)); }
+html[data-accent="shellpink"] .avail-panel, html[data-accent="surf"] .avail-panel, html[data-accent="duo"] .avail-panel { background: color-mix(in srgb, var(--accent-2) 22%, var(--white)); }
+html[data-accent="shellpink"] .duo2-panel, html[data-accent="surf"] .duo2-panel, html[data-accent="duo"] .duo2-panel { background: color-mix(in srgb, var(--accent) 20%, var(--white)); }
+html[data-accent="shellpink"] .duo2-panel:nth-child(2), html[data-accent="surf"] .duo2-panel:nth-child(2), html[data-accent="duo"] .duo2-panel:nth-child(2) { background: color-mix(in srgb, var(--accent-2) 20%, var(--white)); }
 html[data-accent] .duo2-panel:nth-child(2) .duo2-ghost { -webkit-text-stroke-color: var(--accent-2-soft); }
-html[data-accent] .btn-quiet { border-color: var(--accent); color: var(--ink); background: color-mix(in srgb, var(--accent) 14%, var(--white)); }
-html[data-accent] .pill-link { border-color: var(--accent); color: var(--ink); }
+html[data-accent="shellpink"] .btn-quiet, html[data-accent="surf"] .btn-quiet, html[data-accent="duo"] .btn-quiet { border-color: var(--accent); color: var(--ink); background: color-mix(in srgb, var(--accent) 14%, var(--white)); }
+html[data-accent="shellpink"] .pill-link, html[data-accent="surf"] .pill-link, html[data-accent="duo"] .pill-link { border-color: var(--accent); color: var(--ink); }
 html[data-accent] .podcast-wave span:nth-child(even) { background: var(--accent-2); }
 html[data-accent] .ticker-track span:nth-child(even)::after { color: var(--accent-2); }
-html[data-accent] .scene-stats .chip { border-color: var(--accent-2); color: var(--ink); background: color-mix(in srgb, var(--accent-2) 16%, var(--white)); }
-html[data-accent] .standing-year { border-color: var(--accent); color: var(--ink); background: color-mix(in srgb, var(--accent) 16%, var(--white)); }
+html[data-accent="shellpink"] .scene-stats .chip, html[data-accent="surf"] .scene-stats .chip, html[data-accent="duo"] .scene-stats .chip { border-color: var(--accent-2); color: var(--ink); background: color-mix(in srgb, var(--accent-2) 16%, var(--white)); }
+html[data-accent="shellpink"] .standing-year, html[data-accent="surf"] .standing-year, html[data-accent="duo"] .standing-year { border-color: var(--accent); color: var(--ink); background: color-mix(in srgb, var(--accent) 16%, var(--white)); }
 
 html[data-accent] .heritage-marquee { filter: none; }
 
@@ -1458,3 +1475,4 @@ html[data-accent] .ig-overlay { background: color-mix(in srgb, var(--accent) 55%
 .pal-btn--shellpink { background: #F391A0; }
 .pal-btn--surf { background: #9AD5CA; }
 .pal-btn--duo { background: linear-gradient(135deg, #F391A0 50%, #9AD5CA 50%); }
+.pal-btn--cream { background: linear-gradient(135deg, #F1E9B6 60%, #272F3A 60%); }
