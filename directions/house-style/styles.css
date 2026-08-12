@@ -47,21 +47,21 @@ html[data-accent="surf"]      { --accent: #9AD5CA; --accent-strong: #2F6E63; --a
 html[data-accent="duo"]       { --accent: #F391A0; --accent-strong: #B24B5F; --accent-soft: rgba(243, 145, 160, 0.45); --accent-2: #9AD5CA; --accent-2-strong: #2F6E63; --accent-2-soft: rgba(154, 213, 202, 0.50); }
 
 /* --- TEST-PROMINENCE placements (exploration only; final roles decided later) --- */
-html[data-accent] .announce { background: var(--accent-strong); }
+html[data-accent] .announce { background: var(--accent); color: var(--ink); }
 html[data-accent] .players-panel,
 html[data-accent] .signup-panel,
-html[data-accent] .collection-hero { background: color-mix(in srgb, var(--accent) 9%, var(--panel)); }
-html[data-accent] .avail-panel { background: color-mix(in srgb, var(--accent-2) 9%, var(--panel)); }
-html[data-accent] .duo2-panel { background: color-mix(in srgb, var(--accent) 8%, var(--panel)); }
-html[data-accent] .duo2-panel:nth-child(2) { background: color-mix(in srgb, var(--accent-2) 8%, var(--panel)); }
+html[data-accent] .collection-hero { background: color-mix(in srgb, var(--accent) 22%, var(--white)); }
+html[data-accent] .avail-panel { background: color-mix(in srgb, var(--accent-2) 22%, var(--white)); }
+html[data-accent] .duo2-panel { background: color-mix(in srgb, var(--accent) 20%, var(--white)); }
+html[data-accent] .duo2-panel:nth-child(2) { background: color-mix(in srgb, var(--accent-2) 20%, var(--white)); }
 html[data-accent] .duo2-panel:nth-child(2) .duo2-ghost { -webkit-text-stroke-color: var(--accent-2-soft); }
-html[data-accent] .btn-quiet { border-color: var(--accent); color: var(--accent-strong); }
-html[data-accent] .pill-link { border-color: var(--accent); color: var(--accent-strong); }
+html[data-accent] .btn-quiet { border-color: var(--accent); color: var(--ink); background: color-mix(in srgb, var(--accent) 14%, var(--white)); }
+html[data-accent] .pill-link { border-color: var(--accent); color: var(--ink); }
 html[data-accent] .podcast-wave span:nth-child(even) { background: var(--accent-2); }
 html[data-accent] .ticker-track span:nth-child(even)::after { color: var(--accent-2); }
-html[data-accent] .scene-stats .chip { border-color: var(--accent-2); color: var(--accent-2-strong); }
-html[data-accent] .standing-year { border-color: var(--accent-soft); color: var(--accent-strong); }
-html[data-accent] .cathi-link.is-active { color: var(--accent-strong); }
+html[data-accent] .scene-stats .chip { border-color: var(--accent-2); color: var(--ink); background: color-mix(in srgb, var(--accent-2) 16%, var(--white)); }
+html[data-accent] .standing-year { border-color: var(--accent); color: var(--ink); background: color-mix(in srgb, var(--accent) 16%, var(--white)); }
+
 html[data-accent] .heritage-marquee { filter: none; }
 
 ::selection { background: var(--accent-soft); }
@@ -132,7 +132,7 @@ h2 {
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--accent-strong);
+  color: var(--slate);
 }
 
 .ed-note {
@@ -273,7 +273,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 .hero-eyebrow {
   margin: 0 0 0.9rem;
   font-family: var(--font-ui); font-size: 0.875rem; font-weight: 600;
-  letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent-strong);
+  letter-spacing: 0.22em; text-transform: uppercase; color: var(--slate);
 }
 
 .hero-ctas { display: flex; flex-wrap: wrap; gap: 0.9rem; margin-top: 2.2rem; }
@@ -295,7 +295,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 }
 .hero-caption-label {
   font-family: var(--font-ui); font-size: 0.75rem; font-weight: 600;
-  letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent-strong);
+  letter-spacing: 0.16em; text-transform: uppercase; color: var(--red);
 }
 .hero-caption-title { font-size: 0.875rem; color: var(--slate-strong); max-width: 44ch; }
 .hero-caption-meta {

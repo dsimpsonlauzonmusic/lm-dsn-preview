@@ -348,9 +348,7 @@
         gsap.fromTo(el.querySelectorAll('.rv-word'),
           { color: el.dataset.bgColor || '#D5DAE1' },
           {
-            color: (document.documentElement.hasAttribute('data-accent')
-              ? getComputedStyle(document.documentElement).getPropertyValue('--accent-strong').trim() || el.dataset.fgColor
-              : el.dataset.fgColor) || '#272F3A',
+            color: el.dataset.fgColor || '#272F3A',
             duration: 0.3,
             stagger: 0.02,
             scrollTrigger: {
