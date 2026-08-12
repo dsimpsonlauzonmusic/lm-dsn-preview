@@ -37,10 +37,28 @@
   --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-html[data-accent="magenta"] { --accent: #D51F8C; --accent-soft: rgba(213, 31, 140, 0.30); --accent-2: #D51F8C; }
-html[data-accent="teal"]    { --accent: #3E8E8B; --accent-soft: rgba(95, 166, 164, 0.40); --accent-2: #3E8E8B; }
-html[data-accent="duo"]     { --accent: #D51F8C; --accent-soft: rgba(213, 31, 140, 0.30); --accent-2: #3E8E8B; }
-html[data-accent="amber"]   { --accent: #C98A1B; --accent-soft: rgba(201, 138, 27, 0.35); --accent-2: #C98A1B; }
+html[data-accent="magenta"] { --accent: #D51F8C; --accent-strong: #A9146D; --accent-soft: rgba(213, 31, 140, 0.30); --accent-2: #D51F8C; --accent-2-soft: rgba(213, 31, 140, 0.30); }
+html[data-accent="teal"]    { --accent: #3E8E8B; --accent-strong: #2E6B69; --accent-soft: rgba(95, 166, 164, 0.40); --accent-2: #3E8E8B; --accent-2-soft: rgba(95, 166, 164, 0.40); }
+html[data-accent="duo"]     { --accent: #D51F8C; --accent-strong: #A9146D; --accent-soft: rgba(213, 31, 140, 0.30); --accent-2: #3E8E8B; --accent-2-soft: rgba(95, 166, 164, 0.40); }
+html[data-accent="amber"]   { --accent: #C98A1B; --accent-strong: #9A6A12; --accent-soft: rgba(201, 138, 27, 0.35); --accent-2: #C98A1B; --accent-2-soft: rgba(201, 138, 27, 0.35); }
+
+/* --- TEST-PROMINENCE placements (exploration only; final roles decided later) --- */
+html[data-accent] .announce { background: var(--accent-strong); }
+html[data-accent] .players-panel,
+html[data-accent] .signup-panel,
+html[data-accent] .collection-hero { background: color-mix(in srgb, var(--accent) 9%, var(--panel)); }
+html[data-accent] .avail-panel { background: color-mix(in srgb, var(--accent-2) 9%, var(--panel)); }
+html[data-accent] .duo2-panel { background: color-mix(in srgb, var(--accent) 8%, var(--panel)); }
+html[data-accent] .duo2-panel:nth-child(2) { background: color-mix(in srgb, var(--accent-2) 8%, var(--panel)); }
+html[data-accent] .duo2-panel:nth-child(2) .duo2-ghost { -webkit-text-stroke-color: var(--accent-2-soft); }
+html[data-accent] .btn-quiet { border-color: var(--accent); color: var(--accent-strong); }
+html[data-accent] .pill-link { border-color: var(--accent); color: var(--accent-strong); }
+html[data-accent] .podcast-wave span:nth-child(even) { background: var(--accent-2); }
+html[data-accent] .ticker-track span:nth-child(even)::after { color: var(--accent-2); }
+html[data-accent] .scene-stats .chip { border-color: var(--accent-2); color: var(--accent-2); }
+html[data-accent] .standing-year { border-color: var(--accent-soft); color: var(--accent-strong); }
+html[data-accent] .cathi-link.is-active { color: var(--accent-strong); }
+html[data-accent] .heritage-marquee { filter: none; }
 
 ::selection { background: var(--accent-soft); }
 
