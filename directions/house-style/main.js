@@ -11,40 +11,6 @@
 
   /* ---------- Plain-JS UI (works without GSAP) ---------- */
 
-  // PROTOTYPE-ONLY: accent palette switcher (design exploration; removed at
-  // theme port). Persists the pick across pages via localStorage.
-  (function () {
-    var KEY = 'lauzon-accent';
-    var saved = null;
-    try { saved = localStorage.getItem(KEY); } catch (e) {}
-    if (saved) document.documentElement.setAttribute('data-accent', saved);
-    var host = document.createElement('div');
-    host.className = 'pal-switch';
-    host.innerHTML = '<span>Accent</span>' +
-      '<button class="pal-btn pal-btn--none" type="button" data-pal="" title="Lauzon only (no accent)" aria-label="No accent"></button>' +
-      '<button class="pal-btn pal-btn--shellpink" type="button" data-pal="shellpink" title="Shell Pink" aria-label="Shell Pink accent"></button>' +
-      '<button class="pal-btn pal-btn--surf" type="button" data-pal="surf" title="Surf Green" aria-label="Surf Green accent"></button>' +
-      '<button class="pal-btn pal-btn--duo" type="button" data-pal="duo" title="Shell Pink + Surf Green" aria-label="Shell Pink and Surf Green accents"></button>' +
-      '<button class="pal-btn pal-btn--cream" type="button" data-pal="cream" title="Warm cream ground, accents on dark only" aria-label="Cream ground with stage accents"></button>';
-    document.body.appendChild(host);
-    var mark = function () {
-      var cur = document.documentElement.getAttribute('data-accent') || '';
-      host.querySelectorAll('.pal-btn').forEach(function (b) {
-        b.classList.toggle('is-on', b.getAttribute('data-pal') === cur);
-      });
-    };
-    host.addEventListener('click', function (e) {
-      var b = e.target.closest('.pal-btn');
-      if (!b) return;
-      var v = b.getAttribute('data-pal');
-      if (v) document.documentElement.setAttribute('data-accent', v);
-      else document.documentElement.removeAttribute('data-accent');
-      try { v ? localStorage.setItem(KEY, v) : localStorage.removeItem(KEY); } catch (e2) {}
-      mark();
-    });
-    mark();
-  })();
-
   var menuBtn = document.querySelector('.menu-btn');
   if (menuBtn) {
     menuBtn.addEventListener('click', function () {
