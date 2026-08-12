@@ -22,10 +22,9 @@
     host.className = 'pal-switch';
     host.innerHTML = '<span>Accent</span>' +
       '<button class="pal-btn pal-btn--none" type="button" data-pal="" title="Lauzon only (no accent)" aria-label="No accent"></button>' +
-      '<button class="pal-btn pal-btn--magenta" type="button" data-pal="magenta" title="Magenta" aria-label="Magenta accent"></button>' +
-      '<button class="pal-btn pal-btn--teal" type="button" data-pal="teal" title="Teal" aria-label="Teal accent"></button>' +
-      '<button class="pal-btn pal-btn--duo" type="button" data-pal="duo" title="Magenta + Teal" aria-label="Magenta and teal accents"></button>' +
-      '<button class="pal-btn pal-btn--amber" type="button" data-pal="amber" title="Amber" aria-label="Amber accent"></button>';
+      '<button class="pal-btn pal-btn--shellpink" type="button" data-pal="shellpink" title="Shell Pink" aria-label="Shell Pink accent"></button>' +
+      '<button class="pal-btn pal-btn--surf" type="button" data-pal="surf" title="Surf Green" aria-label="Surf Green accent"></button>' +
+      '<button class="pal-btn pal-btn--duo" type="button" data-pal="duo" title="Shell Pink + Surf Green" aria-label="Shell Pink and Surf Green accents"></button>';
     document.body.appendChild(host);
     var mark = function () {
       var cur = document.documentElement.getAttribute('data-accent') || '';
