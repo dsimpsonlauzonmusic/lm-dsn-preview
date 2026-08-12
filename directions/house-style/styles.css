@@ -26,10 +26,23 @@
   --r-card: 24px;
   --r-media: 18px;
 
+  /* Accent exploration (prototype-only switcher in main.js sets data-accent
+     on <html>; default = no accent, slate stands in) */
+  --accent: var(--slate);
+  --accent-soft: rgba(102, 119, 142, 0.35);
+  --accent-2: var(--mist);
+
   --sect: clamp(4.5rem, 8vw, 7.5rem);
   --wrap: 1280px;
   --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
 }
+
+html[data-accent="magenta"] { --accent: #D51F8C; --accent-soft: rgba(213, 31, 140, 0.30); --accent-2: #D51F8C; }
+html[data-accent="teal"]    { --accent: #3E8E8B; --accent-soft: rgba(95, 166, 164, 0.40); --accent-2: #3E8E8B; }
+html[data-accent="duo"]     { --accent: #D51F8C; --accent-soft: rgba(213, 31, 140, 0.30); --accent-2: #3E8E8B; }
+html[data-accent="amber"]   { --accent: #C98A1B; --accent-soft: rgba(201, 138, 27, 0.35); --accent-2: #C98A1B; }
+
+::selection { background: var(--accent-soft); }
 
 *, *::before, *::after { box-sizing: border-box; }
 
@@ -97,7 +110,7 @@ h2 {
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--slate);
+  color: var(--accent);
 }
 
 .ed-note {
@@ -238,7 +251,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 .hero-eyebrow {
   margin: 0 0 0.9rem;
   font-family: var(--font-ui); font-size: 0.875rem; font-weight: 600;
-  letter-spacing: 0.22em; text-transform: uppercase; color: var(--slate);
+  letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent);
 }
 
 .hero-ctas { display: flex; flex-wrap: wrap; gap: 0.9rem; margin-top: 2.2rem; }
@@ -260,7 +273,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 }
 .hero-caption-label {
   font-family: var(--font-ui); font-size: 0.75rem; font-weight: 600;
-  letter-spacing: 0.16em; text-transform: uppercase; color: var(--red);
+  letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent);
 }
 .hero-caption-title { font-size: 0.875rem; color: var(--slate-strong); max-width: 44ch; }
 .hero-caption-meta {
@@ -493,7 +506,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 .standing-laurel {
   position: absolute; right: -0.35em; bottom: -0.42em; pointer-events: none;
   font-family: var(--font-display); font-size: clamp(4.5rem, 7vw, 6.5rem); line-height: 1;
-  color: transparent; -webkit-text-stroke: 1.5px rgba(159, 169, 184, 0.45);
+  color: transparent; -webkit-text-stroke: 1.5px var(--accent-soft);
 }
 .standings-note {
   margin: 1.4rem 0 0;
@@ -520,7 +533,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   padding: 0.7rem 1.35rem;
   transition: border-color 0.2s var(--ease-out);
 }
-.chan:hover { border-color: var(--ink); }
+.chan:hover { border-color: var(--accent); }
 .chan svg { width: 17px; height: 17px; fill: none; stroke: var(--slate-strong); stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
 .chan--soon { color: var(--slate); cursor: default; }
 .chan--soon i { font-style: normal; font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--mist); margin-left: 0.2rem; }
@@ -558,7 +571,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   position: absolute; left: clamp(1.5rem, 3vw, 2.5rem); bottom: -0.22em; pointer-events: none;
   font-family: var(--font-display); font-size: clamp(6rem, 11vw, 9.5rem); line-height: 1;
   text-transform: uppercase;
-  color: transparent; -webkit-text-stroke: 1.5px rgba(159, 169, 184, 0.35);
+  color: transparent; -webkit-text-stroke: 1.5px var(--accent-soft);
 }
 
 /* ---------- Brands rail ---------- */
@@ -661,7 +674,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 .players-mark {
   position: absolute; top: clamp(1.5rem, 4vw, 3rem); right: clamp(2rem, 5vw, 4rem);
   font-family: var(--font-body); font-size: clamp(5rem, 9vw, 8rem); line-height: 0.5;
-  color: var(--mist); pointer-events: none;
+  color: var(--accent-2); pointer-events: none; opacity: 0.65;
 }
 
 .players-stars {
@@ -721,7 +734,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   font-family: var(--font-display); font-size: 1.15rem; letter-spacing: 0.06em;
   color: var(--slate); text-transform: uppercase; white-space: nowrap;
 }
-.ticker-track span::after { content: '·'; color: var(--red); margin-inline: 1.4rem; }
+.ticker-track span::after { content: '·'; color: var(--accent); margin-inline: 1.4rem; }
 
 .scene-grid {
   display: grid; grid-template-columns: 5fr 7fr;
@@ -762,7 +775,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 }
 
 .podcast-wave { display: flex; align-items: flex-end; gap: 4px; height: 44px; margin-bottom: 2rem; }
-.podcast-wave span { width: 4px; border-radius: 2px; background: var(--red); transform-origin: bottom; }
+.podcast-wave span { width: 4px; border-radius: 2px; background: var(--accent); transform-origin: bottom; }
 
 .podcast-kicker {
   margin: 0 0 0.6rem;
@@ -774,7 +787,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   font-family: var(--font-display); font-weight: 400;
   font-size: clamp(2.6rem, 4.5vw, 3.9rem); line-height: 0.95; text-transform: uppercase;
 }
-.podcast-title em { font-style: normal; color: var(--red); }
+.podcast-title em { font-style: normal; color: var(--accent); }
 
 .podcast-line { margin: 1rem 0 2rem; font-size: 0.9375rem; font-weight: 300; color: #C7CDD6; max-width: 34ch; }
 
@@ -789,7 +802,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   transition: background-color 0.2s var(--ease-out);
 }
 .pod-latest:hover { background: rgba(255, 255, 255, 0.14); }
-.pod-latest-num { font-family: var(--font-ui); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mist); }
+.pod-latest-num { font-family: var(--font-ui); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); }
 .pod-latest-title { font-family: var(--font-display); font-size: 1.35rem; line-height: 1.05; text-transform: uppercase; color: var(--white); }
 
 /* ---------- First Access ---------- */
@@ -835,6 +848,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 }
 .ig-overlay svg { width: 30px; height: 30px; fill: none; stroke: currentColor; stroke-width: 1.6; }
 .ig-tile:hover .ig-overlay, .ig-tile:focus-visible .ig-overlay { opacity: 1; }
+html[data-accent] .ig-overlay { background: color-mix(in srgb, var(--accent) 45%, rgba(39,47,58,0.35)); }
 
 .ig-foot {
   margin: 1.6rem 0 0; text-align: center;
@@ -1397,3 +1411,28 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
 }
+
+
+/* ---------- PROTOTYPE-ONLY: accent palette switcher (removed at theme port) ---------- */
+
+.pal-switch {
+  position: fixed; left: 1rem; bottom: 1rem; z-index: 300;
+  display: flex; align-items: center; gap: 0.35rem;
+  background: var(--white); border: 1px solid var(--line); border-radius: var(--r-pill);
+  padding: 0.35rem 0.6rem;
+  box-shadow: 0 6px 24px rgba(39, 47, 58, 0.18);
+  font-family: var(--font-ui);
+}
+.pal-switch span { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--slate); margin-right: 0.2rem; }
+.pal-btn {
+  width: 26px; height: 26px; border-radius: 50%; cursor: pointer;
+  border: 2px solid transparent; padding: 0;
+  transition: transform 0.15s var(--ease-out), border-color 0.15s var(--ease-out);
+}
+.pal-btn:hover { transform: scale(1.12); }
+.pal-btn.is-on { border-color: var(--ink); }
+.pal-btn--none { background: linear-gradient(135deg, #272F3A 50%, #F1F1F1 50%); }
+.pal-btn--magenta { background: #D51F8C; }
+.pal-btn--teal { background: #3E8E8B; }
+.pal-btn--duo { background: linear-gradient(135deg, #D51F8C 50%, #3E8E8B 50%); }
+.pal-btn--amber { background: #C98A1B; }
